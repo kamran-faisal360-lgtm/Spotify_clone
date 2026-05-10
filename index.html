@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Spotify Clone</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-left">
+            <i class="fa-brands fa-spotify spotify-logo"></i>
+            <i class="fa-solid fa-house home-icon"></i>
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="What do you want to play?">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+        </div>
+        <div class="nav-right">
+            <a href="#">Premium</a>
+            <a href="#">Support</a>
+            <a href="#">Download</a>
+            <a href="#">Sign up</a>
+        </div>
+    </nav>
+
+    <div class="app-layout">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>Your Library</h2>
+                <button class="create-btn" id="createPlaylistBtn">+ Create</button>
+            </div>
+            <div class="playlist-card">
+                <h4>Create your first playlist</h4>
+                <p>It's easy, we'll help you</p>
+                <button class="action-btn" id="createPlaylistBtn2">Create Playlist</button>
+            </div>
+            <div class="playlist-card">
+                <h4>Let's find some podcasts to follow</h4>
+                <p>We'll keep you updated on new episodes</p>
+                <button class="action-btn">Browse podcasts</button>
+            </div>
+            <div class="playlist-list" id="sidebarPlaylists"></div>
+            <div class="sidebar-footer">
+                <a href="#">Legal</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Cookies</a>
+                <a href="#">About Ads</a>
+                <a href="#">Accessibility</a>
+                <span><i class="fa-solid fa-globe"></i><a href="#">English</a></span>
+            </div>
+        </aside>
+
+        <main class="main-content" id="mainContent">
+            <h2 class="section-title" style="margin-top:0;">Trending Songs</h2>
+            <div class="row-container hide-scrollbar" id="trendingRow"></div>
+
+            <h2 class="section-title">Popular Artists</h2>
+            <div class="row-container hide-scrollbar" id="artistsRow"></div>
+
+            <h2 class="section-title">Popular Albums &amp; Singles</h2>
+            <div class="row-container hide-scrollbar" id="albumsRow"></div>
+
+            <h2 class="section-title">Hot New Singles</h2>
+            <div class="row-container hide-scrollbar" id="singlesRow"></div>
+        </main>
+    </div>
+
+    <footer class="player-bar">
+        <div class="now-playing">
+            <img class="now-playing-img" id="playerCover" src="https://picsum.photos/id/107/56/56" alt="cover">
+            <div class="track-info">
+                <h4 id="playerTitle">Select a song</h4>
+                <p id="playerArtist">—</p>
+            </div>
+            <button class="heart-btn" id="heartBtn" title="Like">
+                <i class="fa-regular fa-heart"></i>
+            </button>
+        </div>
+
+        <div class="player-controls">
+            <div class="control-buttons">
+                <i class="fa-solid fa-shuffle" id="shuffleBtn" title="Shuffle"></i>
+                <i class="fa-solid fa-backward-step" id="prevBtn" title="Previous"></i>
+                <button class="play-pause" id="playPauseBtn">
+                    <i class="fa-solid fa-play" id="playIcon"></i>
+                </button>
+                <i class="fa-solid fa-forward-step" id="nextBtn" title="Next"></i>
+                <i class="fa-solid fa-repeat" id="repeatBtn" title="Repeat"></i>
+            </div>
+            <div class="progress-area">
+                <span class="time" id="currentTime">0:00</span>
+                <div class="progress-bar" id="progressBar">
+                    <div class="progress-filled" id="progressFilled"></div>
+                </div>
+                <span class="time" id="totalTime">0:00</span>
+            </div>
+        </div>
+
+        <div class="volume-container">
+            <i class="fa-solid fa-volume-high" id="muteBtn" title="Mute"></i>
+            <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="0.7">
+        </div>
+    </footer>
+
+    <div class="toast" id="toast"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
